@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: lib/netty-all-5.0.0.Alpha2.jar
+Main-Class: ldy.netty.client.EsClient
