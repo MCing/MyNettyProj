@@ -1,4 +1,4 @@
-package ldy.netty.model;
+package ldy.eqsys.msg;
 
 /**
  * 4.时间段申请数据包

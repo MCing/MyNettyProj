@@ -1,4 +1,4 @@
-package ldy.netty.model;
+package ldy.eqsys.msg;
 
 /**
  * 6.时间段触发控制包

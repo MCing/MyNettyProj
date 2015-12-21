@@ -1,17 +1,14 @@
 package ldy.netty.client.handler;
 
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
 import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.concurrent.EventExecutor;
+import ldy.eqsys.msg.BaseMsg;
+import ldy.eqsys.msg.RegRspMsg;
+import ldy.eqsys.msg.TransModeMsg;
 import ldy.netty.client.EsClient;
-import ldy.netty.model.BaseMsg;
-import ldy.netty.model.RegRspMsg;
-import ldy.netty.model.TransModeMsg;
 import ldy.netty.util.DataBuilder;
 
 public class ClientHandler extends ChannelHandlerAdapter {
@@ -26,17 +23,10 @@ public class ClientHandler extends ChannelHandlerAdapter {
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
 		
 			System.out.println("client channel active");
-			ChannelFuture f = ctx.writeAndFlush(DataBuilder.buildRegMsg(new Random().nextInt(100)));  //发送注册信息包
-//			f.addListener(new ChannelFutureListener() {
-//				
-//				@Override
-//				public void operationComplete(ChannelFuture future) throws Exception {
-//					//ctx.close();
-//				}
-//			});
+			ChannelFuture f = ctx.writeAndFlush(DataBuilder.buildRegMsg());  //发送注册信息包
 			isReg = false;
 			EventExecutor loop = ctx.executor();
-			loop.schedule(new ReconnectTask(), 3000, TimeUnit.MILLISECONDS);
+			loop.schedule(new ReconnectTask(), 10000, TimeUnit.MILLISECONDS);
 	}
 	
 	@Override

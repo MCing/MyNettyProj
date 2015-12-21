@@ -1,4 +1,4 @@
-package ldy.netty.model;
+package ldy.eqsys.msg;
 
 /**
  * 2.注册结果响应包

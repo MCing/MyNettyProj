@@ -2,27 +2,28 @@ package ldy.netty.util;
 
 import java.util.Random;
 
-import ldy.netty.model.CtrlCommandRspMsg;
-import ldy.netty.model.RegMsg;
-import ldy.netty.model.RegRspMsg;
-import ldy.netty.model.TransModeMsg;
+import ldy.eqsys.msg.CtrlCommandRspMsg;
+import ldy.eqsys.msg.RegMsg;
+import ldy.eqsys.msg.RegRspMsg;
+import ldy.eqsys.msg.TransModeMsg;
 
 public class DataBuilder {
 
-	Random random = new Random();
-	public static RegMsg buildRegMsg(int id){
+	private static Random random = new Random();
+	public static RegMsg buildRegMsg(){
 		
 		RegMsg regMsg = new RegMsg();
-		regMsg.setAuthenCode("15577392350");
-		regMsg.setAltitude((short) 50);
-		regMsg.setLatitude(500000);
-		regMsg.setLongitude(500000);
+		regMsg.setAuthenCode("PASSWORD");
+		regMsg.setAltitude((short) random.nextInt(200));
+		regMsg.setLatitude(random.nextInt(300)*100000);
+		regMsg.setLongitude(random.nextInt(300)*100000);
 		regMsg.setMsgType("RE");
-		regMsg.setPacketNo(id);
+		regMsg.setPacketNo(random.nextInt(100));
 		regMsg.setSensitivity(1000);
-		regMsg.setStationId("xx.xxxx"+id);
+		regMsg.setStationId("00"+random.nextInt(100));
+		regMsg.setServerId("007");
 		regMsg.setTransMode((short) 1);
-		regMsg.setTriggerThreshold((short) 100);
+		regMsg.setTriggerThreshold((short) random.nextInt(200));
 		
 		return regMsg;
 

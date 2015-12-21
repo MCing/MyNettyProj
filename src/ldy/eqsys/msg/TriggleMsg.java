@@ -1,4 +1,4 @@
-package ldy.netty.model;
+package ldy.eqsys.msg;
 
 
 /**

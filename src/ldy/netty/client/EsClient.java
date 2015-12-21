@@ -31,7 +31,7 @@ public class EsClient {
 			cbootstrap.group(group)
 			.channel(NioSocketChannel.class)
 			.option(ChannelOption.TCP_NODELAY, true)
-			.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 3000) //连接超时 3s
+			.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 30000) //连接超时 30s
 			.handler(new ChannelHandlers());
 		while(true){
 			try{	

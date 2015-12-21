@@ -4,10 +4,10 @@ import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
+import ldy.eqsys.msg.BaseMsg;
+import ldy.eqsys.msg.CtrlCommandRspMsg;
+import ldy.eqsys.msg.RegMsg;
 import ldy.netty.client.handler.NettyClientMap;
-import ldy.netty.model.BaseMsg;
-import ldy.netty.model.CtrlCommandRspMsg;
-import ldy.netty.model.RegMsg;
 import ldy.netty.util.CommHandler;
 import ldy.netty.util.DataBuilder;
 
